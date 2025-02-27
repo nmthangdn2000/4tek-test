@@ -21,8 +21,9 @@ export const AnimationNumber = ({ n, style }: AnimationNumberProps) => {
   }, [api, inView]);
 
   return (
+    // @ts-ignore
     <animated.div ref={ref} style={style}>
-      {springs.number.to((x) => x.toFixed(0))}
+      {springs.number.to((x) => x.toFixed(0)) as any}
     </animated.div>
   );
 };
