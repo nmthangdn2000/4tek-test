@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-montserrat);
+}
+
+#root {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+}
+
+.floating {
+  animation: float 2s ease-in-out infinite;
+}
+
+.grid-item_our-game {
+  position: relative;
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  /* Khi có 3 cột (lg) -> Cột thứ 2 có margin-top: 20px, cột 1 và 3 -20px */
+  .grid-item_our-game:nth-child(3n + 2) {
+    margin-top: 20px;
+  }
+  .grid-item_our-game:nth-child(3n + 1),
+  .grid-item_our-game:nth-child(3n + 3) {
+    margin-top: -20px;
+  }
+}
+
+@media (min-width: 1280px) {
+  /* Khi có 4 cột (xl) -> Cột 2 và 4 có margin-top: 20px, cột 1 và 3 -20px */
+  .grid-item_our-game:nth-child(4n + 2),
+  .grid-item_our-game:nth-child(4n + 4) {
+    margin-top: 20px;
+  }
+  .grid-item_our-game:nth-child(4n + 1),
+  .grid-item_our-game:nth-child(4n + 3) {
+    margin-top: -20px;
+  }
+}
