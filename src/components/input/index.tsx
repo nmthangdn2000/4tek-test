@@ -13,7 +13,7 @@ export const Input = ({ placeholder, variant }: InputProps) => {
       <input
         type="text"
         className={`w-full outline-none border-none bg-transparent ${
-          variant === 'filled' ? 'placeholder-gray-400 text-black' : 'placeholder-gray-400 text-white'
+          variant === 'outlined' ? 'placeholder-gray-400 text-white' : 'placeholder-gray-400 text-black'
         }
         `}
         placeholder={placeholder}
